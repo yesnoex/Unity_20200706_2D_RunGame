@@ -14,11 +14,12 @@ public class car : MonoBehaviour
 
     //資料
     //品牌、CC 數、重量、顏色、速度、是否有天窗
-    string brand;
-    int cc;
+    public string brand = "賓士" ;
+    [Hearder("CC 數"), Tooltip(0, 2000)]
+    private int cc = 1500;
     float weight;
     bool window;
     float speed;
 
-
+    public int Cc { get => cc; set => cc = value; }
 }
