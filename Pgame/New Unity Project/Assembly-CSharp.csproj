@@ -62,8 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Script\LearnEventMethod.cs" />
     <Compile Include="Assets\Script\car.cs" />
     <Compile Include="Assets\Script\first.cs" />
+    <Compile Include="Assets\Script\player.cs" />
+    <Compile Include="Assets\learn.cs" />
     <None Include="Assets\fonts\mamelon\仕様説明.txt" />
     <None Include="Assets\BayatGames\Free Platform Game Assets\Readme.txt" />
     <None Include="Assets\fonts\genjyuugothic-20150607\README_GenJyuu.txt" />

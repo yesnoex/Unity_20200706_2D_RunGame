@@ -121,6 +121,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &874526035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874526037}
+  - component: {fileID: 874526036}
+  m_Layer: 0
+  m_Name: "\u5B78\u7FD2\u7269\u4EF6"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &874526036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874526035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461caca09cc3dc54d8ef6eced51b4d34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &874526037
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874526035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1226370665
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,11 +190,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1226370665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3025d70f393e704aaa9bddd2801d4d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 959c80c27e4cb2e44acad836db746d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brand: "\u8CD3\u58EB"
-  cc: 1500
+  speed: 5
+  jump: 350
+  hp: 500
+  isGround: 0
+  coin: 0
+  "\u53D7\u50B7\u97F3\u6548": {fileID: 0}
+  "\u6ED1\u884C\u97F3\u6548": {fileID: 0}
+  "\u8DF3\u8E8D\u97F3\u6548": {fileID: 0}
+  "\u91D1\u5E63\u97F3\u6548": {fileID: 0}
+  "\u52D5\u756B\u63A7\u5236\u5668": {fileID: 0}
+  "\u525B\u9AD4": {fileID: 0}
+  "\u78B0\u649E\u5668": {fileID: 0}
 --- !u!4 &1226370667
 Transform:
   m_ObjectHideFlags: 0
