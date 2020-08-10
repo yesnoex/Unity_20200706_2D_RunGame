@@ -15,6 +15,7 @@ public float hp = 500;
 public bool isGround;
 
 
+
  [Header("音效區域")]
     public AudioClip SoundHit;
     public AudioClip SoundSlide;
@@ -34,9 +35,17 @@ public Rigidbody2D rig;
     public Image imageHp;
     private float hpMax;
 
+    [Header("結束畫面")]
+    public GameObject final;
+    private bool dead;
+
+    [Header("過關標題與金幣")]
+    public Text textTitle;
+    public Text textFinalCoin;
+
     #endregion
 
-#region 方法
+    #region 方法
     /// <summary>
     /// 移動
     /// </summary>
@@ -122,7 +131,7 @@ public Rigidbody2D rig;
     private void EatCoin(GameObject obj)
     {
         coin++;                          //遞增1
-        aud.PlayOneShot(SoundCoin, 1.2f); //播放音效
+        aud.PlayOneShot(SoundCoin, 0.2f); //播放音效
         textCoin.text = "金幣數量" + coin ;//文字介面.文字= 字串+整數
         Destroy(obj, 0);                    //刪除(金幣物件 , 延遲時間)
     }
@@ -135,12 +144,19 @@ public Rigidbody2D rig;
         aud.PlayOneShot(SoundHit);
         imageHp.fillAmount = hp / hpMax;
         Destroy(obj);
+        if (hp <= 0) Dead();
     }
     /// <summary>
     /// 死亡
     /// </summary>
     private void Dead()
     {
+        ani.SetTrigger("死亡觸發");
+        final.SetActive(true);
+        speed = 0;
+        dead = true;
+        final.SetActive(true); //顯示結束畫面
+        textTitle.text = "闖關失敗!";
 
     }
     /// <summary>
@@ -148,6 +164,11 @@ public Rigidbody2D rig;
     /// </summary>
     private void Pass()
     {
+        speed = 0;  //速度 = 0
+        final.SetActive(true); //顯示結束畫面
+        textTitle.text = "恭喜你過關了!";
+        textFinalCoin.text = "金幣數量" + coin;
+
 
     }
 
@@ -166,6 +187,12 @@ public Rigidbody2D rig;
     {
         //如果 碰撞資訊.標籤 等於 金幣 吃掉金幣
         if (collision.tag == "Coin") EatCoin(collision.gameObject);
+
+        //如果 碰道障礙物 受傷;
+        if (collision.tag == "障礙物") Hit(collision.gameObject);
+
+        //如果碰撞資訊.名稱 等於 傳送門 過關
+        if (collision.name == "傳送門") Pass();
     }
 
 
@@ -190,6 +217,9 @@ public Rigidbody2D rig;
 
     private void Update()
     {
+        if (dead) return;
+
+        if (transform.position.y <= -6) Dead();
         Jump();
         Slide();
         Move();
