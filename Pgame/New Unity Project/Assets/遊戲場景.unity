@@ -2328,15 +2328,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959c80c27e4cb2e44acad836db746d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 5
   jump: 350
   hp: 500
-  isGround: 0
   coin: 0
+  isGround: 1
+  HP: 0
   SoundHit: {fileID: 0}
   SoundSlide: {fileID: 8300000, guid: 97348b803e672c745b23276aec2b7e11, type: 3}
   SoundJump: {fileID: 8300000, guid: 82f31f1b94bb3004b8736dc13317b0bf, type: 3}
   SoundCoin: {fileID: 0}
+  textCoin: {fileID: 0}
   aud: {fileID: 0}
   ani: {fileID: 410935053}
   rig: {fileID: 410935057}
